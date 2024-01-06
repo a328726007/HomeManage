@@ -250,8 +250,8 @@
                                                 <th>设备ID</th>
                                                 <th>设备名称</th>
                                                 <th>开始时间</th>
-                                                <th>借阅人</th>
-                                                <th>借阅人ID</th>
+                                                <th>申请人</th>
+                                                <th>申请人ID</th>
                                                 <th>归还</th>
                                             </tr>
                                             </thead>
@@ -272,7 +272,8 @@
                                                 </td>
 
                                                 <td class="relative">
-                                                    <a class="action-btn " href="javascript:void(0); ">
+                                                    <a class="action-btn "
+                                                       th:href="'return-book?id=' + ${borrow.getBorrowId()} ">
                                                         <svg class="default-size " viewBox="0 0 341.333 341.333 ">
                                                             <g>
                                                                 <g>
@@ -285,16 +286,6 @@
                                                             </g>
                                                         </svg>
                                                     </a>
-                                                    <div class="action-option ">
-                                                        <ul>
-                                                            <li>
-                                                                <a href="javascript:void(0); "><i class="far fa-edit mr-2 "></i>Edit</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="javascript:void(0); "><i class="far fa-trash-alt mr-2 "></i>Delete</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
                                                 </td>
                                             </tr>
 

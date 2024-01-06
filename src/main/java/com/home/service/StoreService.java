@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface StoreService {
     List<Borrow> getBorrowList();
+
+    void deleteBorrow(String id);
 }
