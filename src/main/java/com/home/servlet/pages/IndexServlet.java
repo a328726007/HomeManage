@@ -28,7 +28,9 @@ public class IndexServlet extends HttpServlet {
         Context context= new Context();
         User user = (User) req.getSession().getAttribute("user");
         context.setVariable("nickname",user.getNickname());
-        context.setVariable("store_list",storeService.getBorrowList());
+        context.setVariable("borrow_list",storeService.getBorrowList());
+        context.setVariable("stores",storeService.listStores());
+        context.setVariable("customer_list",storeService.listCustomers());
         ThymeleafUtil.process("index.html",context,  resp.getWriter());
     }
 }

@@ -18,6 +18,11 @@ import java.io.IOException;
 
 public class StoreServlet extends HttpServlet {
 
+    StoreService storeService;
+    @Override
+    public void init()throws ServletException{
+        storeService = new StoreServcieImpl();
+    }
 
 
     @Override
@@ -25,7 +30,7 @@ public class StoreServlet extends HttpServlet {
         Context context = new Context();
         User user = (User) req.getSession().getAttribute("user");
         context.setVariable("nickname",user.getNickname());
-
+        context.setVariable("stores",storeService.listStores());
         ThymeleafUtil.process("store.html",context,resp.getWriter());
     }
 }
